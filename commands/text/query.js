@@ -1,8 +1,6 @@
 const { SlashCommandBuilder, AttachmentBuilder } = require("discord.js");
 const axios = require("axios");
 
-// TODO: make it work with a passage range (Genesis 1:1-2)
-
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("search")
@@ -27,7 +25,7 @@ module.exports = {
         response.data.forEach((passage) => {
           fullQuote =
             fullQuote +
-            `${passage.text} (${passage.bookname} ${passage.chapter}:${passage.verse}) `;
+            `${passage.text} (${passage.bookname} ${passage.chapter}:${passage.verse})\n`;
         });
 
         if (fullQuote.length > 2000) {
