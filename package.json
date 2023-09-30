@@ -1,0 +1,19 @@
+{
+  "name": "biblebot",
+  "version": "1.0.0",
+  "description": "Discord bot that reads passages from the Holy Bible",
+  "main": "main/index.js",
+  "scripts": {
+    "deploy": "node ./main/registerCommands.js"
+  },
+  "keywords": [
+    "bible"
+  ],
+  "author": "unexp",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1"
+  }
+}
