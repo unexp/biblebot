@@ -13,17 +13,6 @@ module.exports = {
     "integration_types": [0,1],
     "contexts": [0,1,2]
   },
-  data: new SlashCommandBuilder()
-    .setName("search")
-    .setDescription("Look up a passage or chapter from the Holy Bible")
-    .addStringOption((option) =>
-      option
-        .setName("search")
-        .setDescription(
-          "The passage or chapter you want to read (Ex. Genesis 1 or Genesis 1:1)"
-        )
-        .setRequired(true)
-    ),
   async execute(interaction) {
     var fullQuote = "";
     axios
