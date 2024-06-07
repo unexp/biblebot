@@ -2,6 +2,17 @@ const { SlashCommandBuilder, AttachmentBuilder } = require("discord.js");
 const axios = require("axios");
 
 module.exports = {
+  data: {
+    "name": "search",
+    "description": "Look up a passage or chapter from the Holy Bible",
+    "options": [{
+      "name": "search",
+      "description": "The passage or chapter you want to read (Ex. Genesis 1 or Genesis 1:1)",
+      "type": 3
+    }],
+    "integration_types": [0,1],
+    "contexts": [0,1,2]
+  },
   data: new SlashCommandBuilder()
     .setName("search")
     .setDescription("Look up a passage or chapter from the Holy Bible")

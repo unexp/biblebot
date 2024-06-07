@@ -2,9 +2,12 @@ const { SlashCommandBuilder } = require("discord.js");
 const axios = require("axios");
 
 module.exports = {
-  data: new SlashCommandBuilder()
-    .setName("random")
-    .setDescription("Retrieve a random passage from the Holy Bible"),
+  data: {
+    "name": "random",
+    "description": "Retrieve a random passage from the holy bible",
+    "integration_types": [0,1],
+    "contexts": [0,1,2]
+  },
   async execute(interaction) {
     axios
       .get("https://labs.bible.org/api/?type=json&passage=random")

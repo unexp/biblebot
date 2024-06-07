@@ -1,10 +1,12 @@
-const { SlashCommandBuilder } = require("discord.js");
 const axios = require("axios");
 
 module.exports = {
-  data: new SlashCommandBuilder()
-    .setName("votd")
-    .setDescription("Show the verse of the day."),
+  data: {
+    "name": "votd",
+    "description": "Shows the verse of the day.",
+    "integration_types": [0,1],
+    "contexts": [0,1,2]
+  },
   async execute(interaction) {
     axios
       .get("https://labs.bible.org/api/?type=json&passage=votd")
